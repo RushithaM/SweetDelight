@@ -24,9 +24,6 @@ export default function Footer() {
             <p className="text-sm">Email: rushitha286@gmail.com</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-          <p className="text-sm">&copy; 2023 Sweet Delights. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );

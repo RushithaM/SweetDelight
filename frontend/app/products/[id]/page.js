@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import AddToCartButton from '../../components/AddToCartButton';
 
 async function getProduct(id) {
   try {
@@ -63,6 +64,7 @@ export default async function ProductPage({ params: initialParams }) {
             <p className="text-gray-600 mb-4 uppercase">{product.category}</p>
             <p className="text-black text-2xl font-bold my-4">${product.price.toFixed(2)}</p>
             <p className="text-gray-800 mb-6">{product.description}</p>
+            <AddToCartButton product={product} />
           </div>
         </div>
       </div>

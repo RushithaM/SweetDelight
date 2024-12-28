@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { ShoppingCart, Search } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { useCart } from './CartProvider'
 
 const Header = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = useState('')
+  const { cart } = useCart()
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0)
 
   useEffect(() => {
     setSearchQuery(searchParams.get('q') || '')
@@ -63,6 +66,12 @@ const Header = () => {
             className="flex items-center justify-center rounded-lg border bg-white p-2 hover:bg-pink-100 relative"
           >
             <ShoppingCart className="h-5 w-5" />
+            {cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-pink-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                {cartItemCount}
+              </span>
+            )}
+            <span className="sr-only">Cart</span>
           </Link>
         </div>
       </div>
