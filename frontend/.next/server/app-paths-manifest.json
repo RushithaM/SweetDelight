@@ -1,9 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/cart/page": "app/cart/page.js",
-  "/all-products/page": "app/all-products/page.js",
-  "/page": "app/page.js",
-  "/category/[slug]/page": "app/category/[slug]/page.js",
-  "/products/[id]/page": "app/products/[id]/page.js"
-}
