@@ -1,6 +1,7 @@
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { Suspense } from 'react'
 import { CartProvider } from './components/CartProvider'
 
 export const metadata = {
@@ -13,7 +14,9 @@ export default function RootLayout({ children }) {
     <html>
       <body>
         <CartProvider>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           <main className="min-h-screen bg-rose-50">{children}</main>
           <Footer />
         </CartProvider>
